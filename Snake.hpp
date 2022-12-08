@@ -10,20 +10,24 @@
 
 #include <stdio.h>
 #include <tuple>
+#include <list>
 
 class Snake {
     private:
-        int x;
-        int y;
         int length;
+        std::tuple<int, int> front;
+        std::tuple<int, int> back;
         int velocity;
         char direction;
+        std::list<std::tuple<int, int>> nodes;
     
     public:
         Snake(int x, int y, int velocity);
         void change_dir(char dir);
+        char get_direction();
         void move_snake();
-        std::tuple<int, int> get_pos();
+        std::list<std::tuple<int, int>> get_nodes();
+        int get_length();
 };
 
 #endif /* Snake_hpp */

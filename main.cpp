@@ -22,6 +22,7 @@ void board();
 
 int main(int argc, const char * argv[]) {
     initscr();
+    curs_set(0);
     refresh();
     
     Board board = Board(TITLE, WIDTH, HEIGHT);
@@ -44,6 +45,22 @@ int main(int argc, const char * argv[]) {
     
         // Clear screen and continue
         board.refresh();
+        
+        
+        
+        /*
+         switch(snake->get_direction()) {
+             case 'd':
+                 printw("0");
+                 break;
+             case 's':
+                 break;
+             case 'a':
+                 break;
+             case 'w':
+                 break;
+         }
+         */
     }
 
     endwin();

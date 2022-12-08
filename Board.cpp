@@ -21,10 +21,10 @@ void Board::display_box() {
 }
 
 void Board::display_snake(Snake* snake) {
-    // Show the snake
-    std::tuple<int, int> new_pos = snake->get_pos();
-    move(get<1>(new_pos), get<0>(new_pos));
-    printw("0");
+    for (std::tuple<int, int> node : snake->get_nodes()) {
+        move(get<1>(node), get<0>(node));
+        printw("0");
+    }
 }
 
 void Board::refresh() {
